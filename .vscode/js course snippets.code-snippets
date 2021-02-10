@@ -1,0 +1,39 @@
+{
+  // Place your complete_js_course workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "Print to console": {
+    "scope": "javascript,typescript",
+    "prefix": "clg",
+    "body": ["console.log();"],
+    "description": "Log output to console"
+  },
+  "Info to console": {
+    "scope": "javascript,typescript",
+    "prefix": "cli",
+    "body": ["console.info();"],
+    "description": "Info output to console"
+  },
+  "Warn to console": {
+    "scope": "javascript,typescript",
+    "prefix": "clw",
+    "body": ["console.warn();"],
+    "description": "Warn output to console"
+  },
+  "Error to console": {
+    "scope": "javascript,typescript",
+    "prefix": "cle",
+    "body": ["console.error();"],
+    "description": "Error output to console"
+  },
+  "Anonymous Function": {
+    "scope": "javascript,typescript",
+    "prefix": "()=",
+    "body": ["()=>{};"],
+    "description": "Creates an anonymous shorthand function"
+  }
+}

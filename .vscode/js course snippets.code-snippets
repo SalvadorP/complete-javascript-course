@@ -9,25 +9,25 @@
   "Print to console": {
     "scope": "javascript,typescript",
     "prefix": "clg",
-    "body": ["console.log();"],
+    "body": ["console.log($1);"],
     "description": "Log output to console"
   },
   "Info to console": {
     "scope": "javascript,typescript",
     "prefix": "cli",
-    "body": ["console.info();"],
+    "body": ["console.info($1);"],
     "description": "Info output to console"
   },
   "Warn to console": {
     "scope": "javascript,typescript",
     "prefix": "clw",
-    "body": ["console.warn();"],
+    "body": ["console.warn($1);"],
     "description": "Warn output to console"
   },
   "Error to console": {
     "scope": "javascript,typescript",
     "prefix": "cle",
-    "body": ["console.error();"],
+    "body": ["console.error($1);"],
     "description": "Error output to console"
   },
   "Anonymous Function": {

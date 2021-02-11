@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   const randomNumber = () => {
     number = Math.floor(Math.random() * 20);
+    number = number == 0 ? number + 1 : number;
     console.info(number);
   };
   const decreaseScore = () => {
@@ -22,13 +23,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const checkNumber = () => {
     let guess = document.querySelector(".guess");
     const guessValue = Number(guess.value);
+
     if (guessValue == number) {
       message.innerHTML = "🏆 match!";
       body.style.backgroundColor = "green";
       let scoreValue = parseInt(score.innerHTML);
-      console.info(highscoreValue, scoreValue);
       if (highscoreValue < scoreValue) {
-        console.warn("changing highscorevalue");
         highscoreValue = scoreValue;
         highscore.innerHTML = scoreValue;
       }
@@ -41,10 +41,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
       message.innerHTML = "📈 upper";
       decreaseScore();
     }
+    if (guessValue == 0) {
+      message.innerHTML = "⛔ No number or zero";
+    }
   };
   againBtn.addEventListener("click", () => {
     body.style.backgroundColor = "#222";
     score.innerHTML = 20;
+    message.innerHTML = "Start guessing...";
     randomNumber();
   });
   button.addEventListener("click", checkNumber);

@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let message = document.querySelector(".message");
   let body = document.querySelector("body");
   let score = document.querySelector(".score");
+  let highscore = document.querySelector(".highscore");
+  let highscoreValue = 0;
 
   const randomNumber = () => {
     number = Math.floor(Math.random() * 20);
@@ -21,15 +23,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let guess = document.querySelector(".guess");
     const guessValue = Number(guess.value);
     if (guessValue == number) {
-      message.innerHTML = "match!";
+      message.innerHTML = "🏆 match!";
       body.style.backgroundColor = "green";
+      let scoreValue = parseInt(score.innerHTML);
+      console.info(highscoreValue, scoreValue);
+      if (highscoreValue < scoreValue) {
+        console.warn("changing highscorevalue");
+        highscoreValue = scoreValue;
+        highscore.innerHTML = scoreValue;
+      }
     }
     if (guessValue > number) {
-      message.innerHTML = "lower";
+      message.innerHTML = "📉 lower";
       decreaseScore();
     }
     if (guessValue < number) {
-      message.innerHTML = "upper";
+      message.innerHTML = "📈 upper";
       decreaseScore();
     }
   };
